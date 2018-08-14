@@ -1,0 +1,32 @@
+footer {
+
+    padding-top: 68px;
+    padding-bottom: 73px;
+
+    @media(max-width: 767px) {
+
+        padding-top: 0px;
+        padding-bottom: 30px;
+
+    }
+
+    .footer-text {
+
+        @include rem-calc(18px);
+        @include center-block();
+        color: $secondary-color;
+        vertical-align: middle;
+        letter-spacing: 0.2px;
+
+        img {
+
+            width: 20px;
+            height: 16px;
+            display: inline-block;
+            vertical-align: middle;
+
+        }
+
+    }
+
+}

@@ -1,0 +1,150 @@
+@mixin clearfix() {
+
+    &:after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+}
+
+@mixin link-hover($hover-color: inherit) {
+
+    &:hover, &:active, &:focus {
+
+        text-decoration: none;
+        color: $hover-color;
+        cursor: pointer;
+
+    }
+
+}
+
+//Calculate px to rem
+@mixin rem-calc($px) {
+
+    font-size: $px / $based-font-size + rem;
+
+}
+
+//Center element with position absolute
+@mixin center-abs() {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+
+//Center element with display: block
+@mixin center-block() {
+
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+
+}
+
+
+//Font Style: Family, Color, Weight, Style
+@mixin font($family: $primary-font, $color: $primary-color, $weight: 400, $style: normal) {
+
+    font-family: $family;
+    color: $color;
+    font-weight: $weight;
+    font-style: $style;
+
+}
+
+//Placeholder color
+@mixin placeholder-color($color) {
+
+    &::placeholder {
+
+        color: $color;
+        opacity: 1;
+
+    }
+
+    &:-ms-input-placeholder {
+
+        color: $color;
+
+    }
+
+    &::-ms-input-placeholder {
+
+        color: $color;
+
+    }
+}
+
+//Hover on button fill from left to right with change font color
+@mixin button-hover-left-right($text-hover-color, $background-hover-color) {
+
+    &:hover {
+
+        color: $text-hover-color;
+
+        &:after {
+
+            width: 100%;
+
+        }
+
+    }
+
+    &:after {
+
+        content: '';
+        position: absolute;
+        z-index: -1;
+        width: 0%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: $background-hover-color;
+        transition: all 0.3s;
+
+    }
+
+}
+
+
+//Hover on button fill rotated with change font color
+@mixin button-hover-rotated($text-hover-color, $background-hover-color) {
+
+    &:hover {
+
+        color: $text-hover-color;
+
+        &:after {
+
+            height: 260%;
+            opacity: 1;
+
+        }
+
+    }
+
+    &:after {
+
+        content: '';
+        position: absolute;
+        z-index: -1;
+        transition: all 0.5s;
+        width: 100%;
+        height: 0;
+        top: 50%;
+        left: 50%;
+        background: $background-hover-color;
+        opacity: 0;
+        transform: translateX(-50%) translateY(-50%) rotate(45deg);
+
+    }
+
+}
+
+

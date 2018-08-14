@@ -1,0 +1,209 @@
+* {
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: $primary-font;
+    color: $secondary-color;
+    outline: none;
+    cursor: default;
+
+}
+
+img {
+
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+
+}
+
+a {
+
+    color: inherit;
+    @include link-hover();
+
+    &:focus {
+
+        outline: none;
+
+    }
+
+}
+
+.button-primary {
+
+    display: inline-block;
+    border: 2px solid;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
+    @include button-hover-left-right($secondary-color, $primary-color);
+
+    &--white {
+
+        border-color: $primary-color;
+        color: $primary-color;
+        @include link-hover();
+
+    }
+
+}
+
+.button-fill {
+    
+    &--white {
+        
+        background-color: $primary-color;
+        @include font($secondary-font, #000, 700);
+        @include rem-calc(18px);
+        transition: background-color 0.3s ease-in-out;
+
+        &:hover, &:active, &:focus {
+
+            background-color: $secondary-color;
+            color: $primary-color;
+
+        }
+        
+    }
+    
+}
+
+.button-secondary {
+
+    display: inline-block;
+    border: 1px solid;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 16px 39px;
+    letter-spacing: 0.3px;
+    position: relative;
+    overflow: hidden;
+    @include rem-calc(16px);
+    @include button-hover-rotated($primary-color, $secondary-color);
+
+
+    &--dark {
+
+        border-color: $secondary-color;
+        color: $secondary-color;
+        @include link-hover($primary-color);
+
+    }
+
+
+}
+
+.section-title {
+
+    @include center-block();
+    @include rem-calc(40px);
+    font-weight: 300;
+    font-style: italic;
+    font-family: $secondary-font;
+    line-height: 1;
+
+    &:before, &:after {
+
+        content: '';
+        display: block;
+        width: 113px;
+        height: 3px;
+        background-color: $third-color;
+        margin: 26px auto;
+
+    }
+
+}
+
+.radio-group {
+
+    .form-radio {
+
+        display: inline-block;
+
+        label {
+
+            @include rem-calc(16px);
+            @include font($secondary-font, $secondary-color, 700);
+            border: 1px solid $secondary-color;
+            margin-right: 28px;
+            line-height: 48px;
+            width: 70px;
+            text-align: center;
+            transition: background-color 0.3s ease-in-out;
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+            @include button-hover-rotated($primary-color, $secondary-color);
+
+            @media(max-width: 991px) {
+
+                margin-right: 15px;
+
+            }
+
+            @media(max-width: 767px) {
+
+                margin-bottom: 15px;
+
+            }
+
+            &.checked {
+
+                color: $primary-color;
+                background-color: $secondary-color;
+
+            }
+
+        }
+
+        input {
+
+            display: none;
+
+        }
+
+    }
+
+}
+
+.slick-arrow {
+
+    width: 28px;
+    height: 49px;
+    background: url("../img/slider-arrow.png") no-repeat;
+    display: inline-block;
+    position: absolute;
+    top: 42.3%;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    &.arrow-next {
+
+        right: -5.9vw;
+        transform: translateY(-50%) rotate(180deg);
+
+    }
+
+    &.arrow-prev {
+
+        left: -5.9vw;
+
+    }
+
+}
+
+input, .form-control {
+
+    cursor: pointer;
+
+    &:focus, &:hover, &:active, &:visited {
+
+        outline: none;
+        box-shadow: none;
+
+    }
+
+}

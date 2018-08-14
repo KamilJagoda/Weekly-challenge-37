@@ -1,0 +1,190 @@
+.navbar {
+
+    border-radius: 0;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 15;
+    padding: 0 15px;
+
+    &-header {
+
+        .navbar-brand {
+
+            position: relative;
+            height: auto;
+            margin-top: 27px;
+            padding-bottom: 0;
+
+            @media(max-width: 1199px) {
+
+                margin-left: 0 !important;
+
+            }
+
+            @media(max-width: 991px) {
+
+                margin-top: 15px;
+
+            }
+
+            img {
+
+                cursor: pointer;
+
+            }
+
+        }
+
+    }
+
+    &-collapse {
+
+        @media(max-width: 767px) {
+
+            position: absolute;
+            height: 0;
+            transition: padding, height 0.5s ease-in-out;
+            display: block;
+            width: 100%;
+            right: 0px;
+            top: -3px;
+            text-align: center;
+            background: #333;
+            z-index: -1;
+            padding: 0;
+            overflow: hidden;
+
+        }
+
+        &.collapsed {
+
+            @media(max-width: 767px) {
+
+                height: 556px !important;
+
+            }
+
+        }
+
+    }
+
+    .navbar-nav {
+
+        @media(max-width: 1199px) {
+
+            margin-right: 0px;
+
+        }
+
+        @media(max-width: 767px) {
+
+            padding: 85px 0 0;
+            margin: 0;
+
+        }
+
+        li {
+
+            padding: 32px 0px;
+            margin-left: 65px;
+            margin-right: -10px;
+
+            @media(max-width: 991px) {
+
+                padding: 25px 0;
+                margin-left: 30px;
+                margin-right: 0px;
+
+            }
+
+            @media(max-width: 767px) {
+
+                margin-left: 0;
+                padding: 10px 0;
+
+            }
+
+            a {
+
+                @include rem-calc(18px);
+                font-family: $secondary-font;
+                color: $primary-color;
+                padding: 0 10px;
+
+                @media(max-width: 767px) {
+
+                    @include rem-calc(25px);
+                    padding: 15px 0;
+
+                }
+
+                &:hover, &:active, &:hover {
+
+                    background: transparent;
+                    @media(max-width: 767px) {
+
+                        background: $primary-color;
+                        color: $secondary-color;
+                        font-weight: 600;
+
+                    }
+
+                    &:after {
+
+                        height: 2px;
+                        opacity: 1;
+                        transform: translateY(5px);
+
+                        @media(max-width: 767px) {
+
+                            display: none;
+
+                        }
+
+                    }
+
+                }
+
+                &:after {
+
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    width: 100%;
+                    height: 1px;
+                    background: #fff;
+                    content: '';
+                    opacity: 0;
+                    transition: height 0.3s, opacity 0.3s, transform 0.3s;
+                    transform: translateY(-10px);
+
+                }
+
+            }
+
+        }
+
+    }
+
+    .navbar-toggle {
+
+        @media(max-width: 767px) {
+
+            margin-top: 30px;
+            margin-right: 5px;
+
+        }
+
+        .icon-bar {
+
+            @media(max-width: 767px) {
+
+                background: $primary-color;
+                cursor: pointer;
+
+            }
+
+        }
+
+    }
+}

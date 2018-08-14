@@ -1,0 +1,18 @@
+html {
+
+    font-size: 62.5%;
+
+    @media(max-width: 1199px) {
+
+        font-size: 50%;
+
+    }
+
+}
+
+body {
+
+    font-size: $based-font-size;
+
+
+}
